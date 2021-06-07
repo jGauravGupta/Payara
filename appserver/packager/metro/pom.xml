@@ -70,6 +70,24 @@
                     <execution>
                         <id>process-step2</id>
                     </execution>
+                    <execution>
+                        <id>copy-resolver-jar</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>com.sun.org.apache.xml.internal</groupId>
+                                    <artifactId>resolver</artifactId>
+                                    <version>20050927</version>
+                                    <destFileName>resolver.jar</destFileName>
+                                </artifactItem>
+                            </artifactItems>
+                            <outputDirectory>${project.build.directory}/dependency/glassfish/lib</outputDirectory>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>
