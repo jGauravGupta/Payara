@@ -96,7 +96,10 @@
         
         <dependency>
             <groupId>jakarta.servlet.jsp.jstl</groupId>
-            <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+            <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>        
+        <dependency>
+            <groupId>jakarta.authentication</groupId>
+            <artifactId>jakarta.authentication-api</artifactId>
             <scope>provided</scope>
         </dependency>
     </dependencies>
@@ -127,8 +130,7 @@
                                     jakarta.xml.bind-api,
                                     jakarta.security.auth.message-api,
                                     com.sun.xml.bind.jaxb-osgi,
-                                    jakarta.servlet.jsp.jstl-api
-
+                                    jakarta.servlet.jsp.jstl-api,
                                 </Require-Bundle>
                                 <!-- Manually specify the shim versions of packages to be exported via this bundle -->
                                 <!-- Note the "shortened" syntax here: For every API the packages are delimited with
@@ -263,7 +265,12 @@
                                     jakarta.servlet.jsp.jstl.core;
                                     jakarta.servlet.jsp.jstl.tlv;
                                     jakarta.servlet.jsp.jstl.sql;
-                                    jakarta.servlet.jsp.jstl.fmt;version="2.0.0";shim="true"
+                                    jakarta.servlet.jsp.jstl.fmt;version="2.0.0";shim="true",
+                                    
+                                    jakarta.security.auth.message.callback;
+                                    jakarta.security.auth.message.config;
+                                    jakarta.security.auth.message.module;
+                                    jakarta.security.auth.message;version="2.0.0";shim="true"
 
                                     <!-- Minimal version of shim for MP 5.0. -->
                                     <!-- TODO: This is only thing that should remain in final release -->
